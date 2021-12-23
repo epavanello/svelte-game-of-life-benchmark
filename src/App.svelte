@@ -1,19 +1,21 @@
 <script>
-  import { createGrid, createRandomGrid, nextState } from "./lib/game";
-  import Grid from './Grid.svelte'
-  
-  let grid = createRandomGrid(100);
+  import { createRandomGrid, nextState } from "./lib/game";
+  import Grid from "./Grid.svelte";
+
+  let grid = createRandomGrid(40, 100);
+
+  let counter = 0;
 
   function step() {
     grid = nextState(grid);
     requestAnimationFrame(step);
+    counter++;
   }
-  requestAnimationFrame(step)
+  step();
 </script>
 
 <main>
-  <h1>
-  Game of life
-  </h1>
+  <h1>Game of life</h1>
   <Grid items={grid} />
+  counter: {counter}
 </main>

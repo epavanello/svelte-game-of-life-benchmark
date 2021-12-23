@@ -2,7 +2,7 @@
   import { createRandomGrid, nextState } from "./lib/game";
   import Grid from "./Grid.svelte";
 
-  let grid = createRandomGrid(200, 200);
+  let grid = createRandomGrid(40, 100);
 
   let counter = 0;
 
